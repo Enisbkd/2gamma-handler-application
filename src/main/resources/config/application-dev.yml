@@ -32,15 +32,19 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:oracle:thin:@localhost:1521:xe
-    username: system
-    password: oracle
+    url: jdbc:oracle:thin:@2gammadev.sbm.resort:1521/dgd
+    username: x01087
+    password: JN4MYHAV3D8RsxtrKcqn
     hikari:
       poolName: Hikari
       auto-commit: false
+    driver-class-name: oracle.jdbc.driver.OracleDriver
   liquibase:
-    # Remove 'faker' if you do not want the sample data to be loaded automatically
-    contexts: dev, faker
+    contexts: dev
+    default-schema: DGAUTHEN
+    databaseChangeLogTable: FIDEXP_DATABASECHANGELOG
+    databaseChangeLogLockTable: FIDEXP_DATABASECHANGELOGLOCK
+
   mail:
     host: localhost
     port: 25
